@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================================
-// LOADER
+// LOADER (otimizado para mobile - mais rápido)
 // ============================================================
 function initLoader() {
     const loader = document.querySelector('.loader');
@@ -32,7 +32,19 @@ function initLoader() {
     
     if (!loader) return;
     
-    // Simulate loading progress
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    
+    if (isMobile) {
+        // Mobile: esconde rápido, sem animação
+        if (loaderBar) loaderBar.style.width = '100%';
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            document.body.style.overflow = 'visible';
+        }, 200);
+        return;
+    }
+    
+    // Desktop: animação suave
     let progress = 0;
     const interval = setInterval(() => {
         progress += Math.random() * 15;
@@ -43,20 +55,19 @@ function initLoader() {
             setTimeout(() => {
                 loader.classList.add('hidden');
                 document.body.style.overflow = 'visible';
-            }, 500);
+            }, 300);
         }
-    }, 200);
+    }, 150);
     
-    // Fallback: ensure loader hides after max 4 seconds
     setTimeout(() => {
         if (!loader.classList.contains('hidden')) {
             if (loaderBar) loaderBar.style.width = '100%';
             setTimeout(() => {
                 loader.classList.add('hidden');
                 document.body.style.overflow = 'visible';
-            }, 300);
+            }, 200);
         }
-    }, 4000);
+    }, 2000);
 }
 
 // ============================================================
