@@ -1239,7 +1239,7 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
 /* ============================================================
    VIDEOS
    ============================================================ */
-.video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .video-card {
   position: relative;
   border-radius: 16px;
@@ -1249,8 +1249,9 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
   cursor: pointer;
 }
 .video-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
-.video-card:hover img { transform: scale(1.05); }
-.video-play {
+.video-card video { width: 100%; height: 100%; object-fit: cover; }
+.video-card:hover video { transform: scale(1.05); }
+.video-play-btn {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
@@ -1264,8 +1265,11 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
   font-size: 1.5rem;
   transition: 0.4s ease;
   box-shadow: 0 0 30px rgba(212,175,55,0.3);
+  pointer-events: none;
+  z-index: 2;
 }
-.video-card:hover .video-play { transform: translate(-50%, -50%) scale(1.1); background: #D4AF37; }
+.video-card:hover .video-play-btn { transform: translate(-50%, -50%) scale(1.1); background: #D4AF37; }
+.video-card.playing .video-play-btn { opacity: 0; visibility: hidden; }
 .video-overlay {
   position: absolute;
   bottom: 0; left: 0;

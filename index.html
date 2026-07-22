@@ -682,18 +682,44 @@
             </div>
 
             <div class="video-grid">
-                <div class="video-card reveal" style="transition-delay: 0.1s">
-                    <img src="imagens/piscina com hidro.jpg" alt="Piscina & Área Externa" loading="lazy">
+                <div class="video-card reveal" style="transition-delay: 0.1s" onclick="toggleVideo(this)">
+                    <video muted loop playsinline poster="imagens/piscina com hidro.jpg">
+                        <source src="videos/video.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-btn">▶</div>
                     <div class="video-overlay">
                         <h3 class="video-title">🏊 Piscina & Área Externa</h3>
                         <p class="video-desc">Relaxe na piscina com hidromassagem</p>
                     </div>
                 </div>
-                <div class="video-card reveal" style="transition-delay: 0.2s">
-                    <img src="imagens/sala sinuca.jpg" alt="Salão de Jogos" loading="lazy">
+                <div class="video-card reveal" style="transition-delay: 0.2s" onclick="toggleVideo(this)">
+                    <video muted loop playsinline poster="imagens/sala sinuca.jpg">
+                        <source src="videos/video (1).mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-btn">▶</div>
                     <div class="video-overlay">
                         <h3 class="video-title">🎱 Salão de Jogos</h3>
                         <p class="video-desc">Diversão garantida com sinuca e jogos</p>
+                    </div>
+                </div>
+                <div class="video-card reveal" style="transition-delay: 0.3s" onclick="toggleVideo(this)">
+                    <video muted loop playsinline poster="imagens/area gourmet.jpg">
+                        <source src="videos/video (2).mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-btn">▶</div>
+                    <div class="video-overlay">
+                        <h3 class="video-title">🍖 Área Gourmet</h3>
+                        <p class="video-desc">Churrasqueira e cozinha completa</p>
+                    </div>
+                </div>
+                <div class="video-card reveal" style="transition-delay: 0.4s" onclick="toggleVideo(this)">
+                    <video muted loop playsinline poster="imagens/palco.jpg">
+                        <source src="videos/video (3).mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-btn">▶</div>
+                    <div class="video-overlay">
+                        <h3 class="video-title">🎤 Palco & Festas</h3>
+                        <p class="video-desc">Palco profissional e pista de dança</p>
                     </div>
                 </div>
             </div>
@@ -1108,6 +1134,23 @@
     <script src="js/whatsapp.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/modal.js"></script>
+    <script>
+    // Video play/pause toggle
+    function toggleVideo(card) {
+        const video = card.querySelector('video');
+        if (!video) return;
+        if (video.paused) {
+            // Pause all other videos first
+            document.querySelectorAll('.video-card video').forEach(v => { if (v !== video) v.pause(); });
+            document.querySelectorAll('.video-card').forEach(c => c.classList.remove('playing'));
+            video.play();
+            card.classList.add('playing');
+        } else {
+            video.pause();
+            card.classList.remove('playing');
+        }
+    }
+    </script>
 </body>
 </html>
 

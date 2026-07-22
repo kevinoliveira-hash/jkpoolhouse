@@ -83,6 +83,7 @@
   .tour-grid { grid-template-columns: 1fr; }
   .dayuse-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .video-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 }
 
 /* === Mobile (576px - 767px) === */

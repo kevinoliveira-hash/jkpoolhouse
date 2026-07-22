@@ -8,6 +8,7 @@
 
 ### 📁 Arquivos Modificados
 
+
 #### `index.html`
 - ✅ Removida referência ao `script.js`
 - ✅ Seção de vídeos corrigida: `<video>` com `src="#"` substituído por cards estáticos com imagem
