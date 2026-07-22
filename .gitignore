@@ -1,0 +1,14 @@
+# OS files
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# No need to ignore anything else - this is a static site
+

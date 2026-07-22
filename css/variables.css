@@ -1,0 +1,87 @@
+/* ============================================================
+   VARIABLES.CSS - Design Tokens & Theme Configuration
+   JK Pool House - Premium Vacation Rental
+   ============================================================ */
+
+:root {
+  /* === Color Palette === */
+  --color-black: #050505;
+  --color-black-soft: #0a0a0a;
+  --color-black-light: #111111;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4D27A;
+  --color-gold-dark: #B8960F;
+  --color-white: #FFFFFF;
+  --color-white-soft: #F9F9F9;
+  --color-gray: #C8C8C8;
+  --color-gray-light: #E5E5E5;
+  --color-gray-dark: #6B6B6B;
+  --color-overlay: rgba(5, 5, 5, 0.6);
+  --color-overlay-light: rgba(5, 5, 5, 0.3);
+  --color-overlay-dark: rgba(5, 5, 5, 0.85);
+
+  /* === Typography === */
+  --font-heading: 'Cinzel', serif;
+  --font-subheading: 'Cormorant Garamond', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* === Font Sizes === */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.5rem;
+  --text-7xl: 6rem;
+
+  /* === Spacing === */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* === Transitions === */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-extra-slow: 1s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* === Border Radius === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* === Shadows === */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.3);
+  --shadow-gold-lg: 0 8px 40px rgba(212, 175, 55, 0.4);
+
+  /* === Z-Index Scale === */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 50;
+  --z-overlay: 100;
+  --z-modal: 200;
+  --z-loader: 300;
+  --z-cursor: 400;
+
+  /* === Glassmorphism === */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 20px;
+}
+
