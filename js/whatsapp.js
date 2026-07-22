@@ -6,8 +6,7 @@
 'use strict';
 
 // === CONFIGURATION ===
-// TODO: Replace with actual WhatsApp number (include country code, no + or spaces)
-const WHATSAPP_NUMBER = '5511999999999'; // Format: 55 (Brazil) + DDD + Number
+const WHATSAPP_NUMBER = '5511966152805'; // 55 (Brazil) + 11 + 966152805
 const WHATSAPP_MESSAGE_PREFIX = 'Olá! Gostaria de reservar a JK Pool House.%0A%0A';
 
 // ============================================================
