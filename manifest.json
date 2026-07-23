@@ -1,0 +1,28 @@
+{
+  "name": "JK Pool House",
+  "short_name": "JK Pool House",
+  "description": "Aluguel de Casa com Piscina para Festas e Eventos em São Paulo. Espaço premium com piscina, churrasqueira, área gourmet e palco.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#D4AF37",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "imagens/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagens/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "travel", "business"],
+  "lang": "pt-BR",
+  "scope": "/"
+}
+

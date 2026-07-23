@@ -1,0 +1,12 @@
+# Robots.txt - JK Pool House
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://jkpoolhouse.com.br/sitemap.xml
+
+# Crawl delay (be polite)
+Crawl-delay: 10
+
