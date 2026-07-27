@@ -1,12 +1,25 @@
-# Robots.txt - JK Pool House
+# robots.txt - JK Pool House
+# https://jkpoolhouse.com.br/
+
 User-agent: *
 Allow: /
+Allow: /imagens/
+Allow: /css/
+Allow: /js/
+Allow: /videos/
+Allow: /assets/
+
 Disallow: /cgi-bin/
 Disallow: /admin/
+Disallow: /js/analytics.js
+Disallow: /js/performance.js
 
 # Sitemap
 Sitemap: https://jkpoolhouse.com.br/sitemap.xml
 
-# Crawl delay (be polite)
-Crawl-delay: 10
+# Crawl delay (be polite to the server)
+Crawl-delay: 5
+
+# Host
+Host: https://jkpoolhouse.com.br
 

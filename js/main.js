@@ -26,43 +26,55 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================================
 // LOADER (otimizado para mobile - mais rápido)
 // ============================================================
+function debounce(func, wait) {
+    var timeout;
+    return function executedFunction() {
+        var context = this;
+        var args = arguments;
+        var later = function() {
+            timeout = null;
+            func.apply(context, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
 function initLoader() {
-    const loader = document.querySelector('.loader');
-    const loaderBar = document.querySelector('.loader-bar-fill');
+    var loader = document.querySelector('.loader');
+    var loaderBar = document.querySelector('.loader-bar-fill');
     
     if (!loader) return;
     
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    var isMobile = window.matchMedia('(max-width: 767px)').matches;
     
     if (isMobile) {
-        // Mobile: esconde rápido, sem animação
         if (loaderBar) loaderBar.style.width = '100%';
-        setTimeout(() => {
+        setTimeout(function() {
             loader.classList.add('hidden');
             document.body.style.overflow = 'visible';
         }, 200);
         return;
     }
     
-    // Desktop: animação suave
-    let progress = 0;
-    const interval = setInterval(() => {
+    var progress = 0;
+    var interval = setInterval(function() {
         progress += Math.random() * 15;
         if (progress > 100) progress = 100;
         if (loaderBar) loaderBar.style.width = progress + '%';
         if (progress === 100) {
             clearInterval(interval);
-            setTimeout(() => {
+            setTimeout(function() {
                 loader.classList.add('hidden');
                 document.body.style.overflow = 'visible';
             }, 300);
         }
     }, 150);
     
-    setTimeout(() => {
+    setTimeout(function() {
         if (!loader.classList.contains('hidden')) {
             if (loaderBar) loaderBar.style.width = '100%';
-            setTimeout(() => {
+            setTimeout(function() {
                 loader.classList.add('hidden');
                 document.body.style.overflow = 'visible';
             }, 200);
@@ -159,7 +171,7 @@ function initNavbar() {
             navbar.classList.remove('scrolled');
         }
         
-        // Hide/show navbar on scroll direction
+    // Hide/show navbar on scroll direction
         if (currentScroll > lastScroll && currentScroll > 200) {
             navbar.style.transform = 'translateY(-100%)';
         } else {
@@ -167,7 +179,7 @@ function initNavbar() {
         }
         
         lastScroll = currentScroll;
-    });
+    }, { passive: true });
     
     // Mobile menu
     if (hamburger && navLinks) {
@@ -344,12 +356,13 @@ function initParallax() {
 // INTERACTIVE COUNTERS WITH PLUS SIGN
 // ============================================================
 function enhanceCounters() {
-    document.querySelectorAll('.counter-number').forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        if (target > 1) {
-            const observer = new MutationObserver(() => {
-                if (counter.textContent.includes(target.toString())) {
-                    const prefix = counter.getAttribute('data-prefix') || '';
+    document.querySelectorAll('.counter-number').forEach(function(counter) {
+        var target = parseInt(counter.getAttribute('data-target'));
+        if (target > 1 && !isNaN(target)) {
+            var observer = new MutationObserver(function() {
+                var currentText = counter.textContent.replace(/[^0-9]/g, '');
+                if (currentText === target.toString()) {
+                    var prefix = counter.getAttribute('data-prefix') || '';
                     counter.textContent = prefix + target + '+';
                     observer.disconnect();
                 }
