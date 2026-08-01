@@ -1,61 +1,38 @@
-# ✅ JK Pool House - Plano de Melhorias (COMPLETO)
+# ✅ JK Pool House - Plano de Melhorias (Nova Rodada)
 
-## Status: ✅ 100% CONCLUÍDO
+## Status: ✅ CONCLUÍDO
 
-### 🔧 Melhorias Implementadas
+### 🔧 Etapas do Plano
 
-#### 1. HTML (index.html) ✅
-- **Tags corrigidas**: Todos os `<div>` e `<section>` mal fechados foram corrigidos
-- **Estrutura semântica**: Adicionado `<main id="main-content">` envolvendo o conteúdo principal
-- **Skip to content**: Link de acessibilidade `skip-to-content` para pular direto ao conteúdo
-- **Erros ortográficos corrigidos**: Todos os textos revisados e padronizados
-- **Meta tags SEO**: Description expandida, keywords atualizadas, hreflang adicionado
-- **BreadcrumbList Schema.org**: Dados estruturados de navegação (migalhas de pão)
-- **preconnect/dns-prefetch**: Google Fonts com carregamento otimizado
-- **Atributos alt**: Todas as imagens com descrições mais ricas e contextualizadas
-- **Vídeos**: Adicionado `preload="none"` e `poster` para lazy loading
-- **Formulário**: Campo de data alterado para `type="date"`, adicionado `novalidate` e `aria-required`
-- **Social links**: Links reais adicionados (Instagram, Facebook, TikTok) com `target="_blank"`
-- **Scripts**: Adicionado atributo `defer` em todos os scripts para carregamento assíncrono
-- **Favicon**: Tag de fechamento corrigida
-
-#### 2. CSS (style.css, responsive.css, variables.css) ✅
-- **Skip to content styles**: Estilos para o link de acessibilidade com foco visível
-- **Focus visible**: Regras `:focus-visible` para navegação por teclado
-- **Keyboard nav**: Estilos `.keyboard-nav` para quando usuário navega com Tab
-- **Reduced motion**: Regra `prefers-reduced-motion` já existente mantida
-- **Scroll passive**: Event listeners com `{ passive: true }` para performance
-
-#### 3. JavaScript (main.js) ✅
-- **Função debounce**: Adicionada utilidade `debounce()` para otimizar eventos de scroll/resize
-- **Loader**: Código refatorado com `var` para compatibilidade, tratamento de fallback
-- **Scroll event**: Adicionado `{ passive: true }` no event listener do navbar scroll
-- **EnhanceCounters**: Corrigida lógica para verificar `!isNaN(target)` e usar regex para extrair números
-- **Back to Top**: Event listener de scroll mantido funcional
-- **Keyboard nav**: Funcionalidade de detecção de navegação por teclado mantida
-
-#### 4. SEO & Acessibilidade ✅
-- **Meta tags**: Description, keywords, hreflang, referrer, canonical
-- **Schema.org**: LocalBusiness + BreadcrumbList
-- **Open Graph**: URLs absolutas com domínio completo
-- **Twitter Cards**: Imagens com URLs absolutas
-- **Skip to content**: Link funcional com foco visível
-- **Focus visible**: Suporte a navegação por teclado
-- **ARIA**: Roles e labels aprimorados em todos os elementos interativos
-- **Alt texts**: Todas as imagens com descrições detalhadas
-
-#### 5. Robots.txt & Sitemap.xml ✅
-- **robots.txt**: Atualizado com Host, mais Allow/Disallow específicos
-- **sitemap.xml**: Adicionado namespace xhtml para hreflang, prioridades ajustadas
+- [x] 0. Analisar código (HTML, CSS, JS)
+- [x] 1. index.html: carregar fontes e CSS via `<link>` (remover `@import` bloqueante)
+- [x] 2. css/style.css: remover `@import` de Google Fonts e CSS locais
+- [x] 3. css/style.css: adicionar estilos do cursor customizado (`.custom-cursor`)
+- [x] 4. css/style.css: adicionar `.nav-cta.mobile-show` (botão Reservar no menu mobile)
+- [x] 5. css/style.css: tipografia fluida com `clamp()`
+- [x] 6. css/style.css: `scroll-margin-top` para âncoras não ficarem ocultas
+- [x] 7. css/style.css: fallback de `backdrop-filter` (navegadores antigos)
+- [x] 8. css/style.css: `content-visibility` para performance
+- [x] 9. css/responsive.css: breakpoint intermediário (992px - 1120px)
+- [x] 10. js/main.js: criar função `toggleVideo` (corrigir vídeos quebrados)
+- [x] 11. js/main.js: atualizar `aria-expanded` no FAQ (acessibilidade)
+- [x] 12. js/main.js: ativar classe `cursor-enabled`
+- [x] 13. Atualizar relatório final
 
 ### 📊 Resumo das Alterações
 
 | Arquivo | Principais Mudanças |
 |---------|-------------------|
-| `index.html` | Tags corrigidas, SEO aprimorado, acessibilidade, scripts com defer |
-| `css/style.css` | Skip-to-content, focus-visible, keyboard-nav styles |
-| `js/main.js` | Debounce, passive scroll, enhanceCounters corrigido |
-| `robots.txt` | Atualizado com melhores práticas |
-| `sitemap.xml` | Hreflang, prioridades ajustadas |
+| `index.html` | Fontes e CSS via `<link>` para carregamento otimizado |
+| `css/style.css` | Cursor customizado, mobile-show, clamp(), scroll-margin, fallbacks, performance |
+| `css/responsive.css` | Breakpoint intermediário 992-1120px |
+| `js/main.js` | `toggleVideo()` (play/pause com pausa dos demais), `aria-expanded` sincronizado no FAQ, ativação da classe `cursor-enabled` no body |
 | `TODO.md` | Relatório final de conclusão |
+
+### 🎯 Detalhes das Implementações em `js/main.js`
+
+1. **`toggleVideo(card)`** — Função global chamada via `onclick` no `index.html`. Reproduz/pausa o vídeo do card clicado, pausa automaticamente todos os outros vídeos da seção e alterna a classe `.playing` (estilizada no CSS para ocultar o botão ▶). Inclui `catch()` silencioso para bloqueio de autoplay.
+2. **`initFaq()`** — Agora sincroniza o atributo `aria-expanded="true/false"` nos botões do FAQ ao abrir/fechar, melhorando a acessibilidade para leitores de tela.
+3. **`initCustomCursor()`** — Adiciona `document.body.classList.add('cursor-enabled')` após a verificação de touch, ativando a visibilidade do cursor customizado definida em `css/style.css` (`body.cursor-enabled`).
+
 

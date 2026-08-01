@@ -1,13 +1,9 @@
 /* ============================================================
-   STYLE.CSS - Main Stylesheet (Optimized v2)
+   STYLE.CSS - Main Stylesheet (Optimized v3)
    JK Pool House - Premium Vacation Rental
    Focus: Lightweight, Responsive, Logo/Brand Emphasis
+   Fontes e CSS carregados via <link> no index.html
    ============================================================ */
-
-/* === Google Fonts (single request) === */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Poppins:wght@300;400;500;600&display=swap');
-@import 'variables.css';
-@import 'animations.css';
 
 /* ============================================================
    BASE & RESET (lightweight)
@@ -23,6 +19,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -42,6 +39,63 @@ img {
 a { text-decoration: none; color: inherit; transition: 0.4s ease; }
 button { border: none; cursor: pointer; font-family: inherit; transition: 0.4s ease; }
 input, textarea, select { font-family: inherit; border: none; outline: none; }
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+.custom-cursor,
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D4AF37;
+  pointer-events: none;
+  z-index: var(--z-cursor, 400);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-follower {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: transparent;
+  transition: transform 0.15s ease, opacity 0.3s ease;
+}
+
+body.cursor-enabled .custom-cursor,
+body.cursor-enabled .custom-cursor-follower {
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom-cursor.hover {
+  transform: translate(-50%, -50%) scale(2);
+}
+
+.custom-cursor-follower.hover {
+  transform: translate(-50%, -50%) scale(0.6);
+  background: rgba(212, 175, 55, 0.15);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   SCROLL MARGIN (âncoras não ficam ocultas atrás do navbar)
+   ============================================================ */
+[id] {
+  scroll-margin-top: 90px;
+}
 
 /* ============================================================
    CONTAINER
@@ -194,6 +248,12 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
   box-shadow: 0 4px 20px rgba(212,175,55,0.3);
 }
 
+/* Botão "Reservar" no menu mobile */
+.nav-cta.mobile-show {
+  display: inline-flex !important;
+  margin-top: 1rem;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -301,7 +361,7 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
 /* ---- HERO BRAND NAME - BIG, BOLD & ELEGANT ---- */
 .hero-brand-name {
   font-family: 'Cinzel', serif;
-  font-size: 5rem;
+  font-size: clamp(2.2rem, 6vw, 5rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 0.75rem;
@@ -319,7 +379,7 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
 
 .hero-title {
   font-family: 'Cinzel', serif;
-  font-size: 4rem;
+  font-size: clamp(1.75rem, 4.5vw, 4rem);
   font-weight: 600;
   line-height: 1.15;
   margin-bottom: 1.25rem;
@@ -334,7 +394,7 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
 
 .hero-subtitle {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
   font-weight: 300;
   color: #C8C8C8;
   line-height: 1.6;
@@ -443,6 +503,31 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
    SECTION COMMON
    ============================================================ */
 .section { padding: 6rem 0; }
+
+/* Performance: só renderiza seções quando próximas do viewport */
+.section,
+.about-content,
+.highlights-grid,
+.gallery-grid,
+.tour-grid,
+.dayuse-grid,
+.review-grid,
+.faq-grid,
+.contact-grid,
+.footer-grid {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
+}
+
+/* Fallback de backdrop-filter para navegadores sem suporte */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .navbar.scrolled,
+  .modal-overlay,
+  .back-to-top,
+  .lightbox-nav {
+    background: #0a0a0a;
+  }
+}
 .section-header { text-align: center; margin-bottom: 4rem; }
 
 .section-label {
@@ -458,7 +543,7 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
 
 .section-title {
   font-family: 'Cinzel', serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 600;
   color: #fff;
   margin-bottom: 1rem;

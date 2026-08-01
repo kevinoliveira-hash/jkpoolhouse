@@ -98,6 +98,9 @@ function initCustomCursor() {
         return;
     }
     
+    // Enable custom cursor visibility (CSS: body.cursor-enabled)
+    document.body.classList.add('cursor-enabled');
+    
     let mouseX = 0;
     let mouseY = 0;
     let followerX = 0;
@@ -282,11 +285,14 @@ function initFaq() {
             faqItems.forEach(other => {
                 if (other !== item) {
                     other.classList.remove('active');
+                    const otherQuestion = other.querySelector('.faq-question');
+                    if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
                 }
             });
             
             // Toggle current
-            item.classList.toggle('active');
+            const isActive = item.classList.toggle('active');
+            question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
         });
     });
 }
@@ -432,5 +438,38 @@ function updateCopyrightYear() {
         const year = new Date().getFullYear();
         el.textContent = el.textContent.replace(/\d{4}/, year);
     });
+}
+
+// ============================================================
+// VIDEO TOGGLE (play/pause) - chamado via onclick no index.html
+// ============================================================
+function toggleVideo(card) {
+    if (!card) return;
+
+    const video = card.querySelector('video');
+
+    if (!video) return;
+
+    // Pausa todos os outros vídeos
+    document.querySelectorAll('.video-card video').forEach(otherVideo => {
+        if (otherVideo !== video) {
+            otherVideo.pause();
+            const otherCard = otherVideo.closest('.video-card');
+            if (otherCard) otherCard.classList.remove('playing');
+        }
+    });
+
+    const isPlaying = card.classList.contains('playing');
+
+    if (isPlaying) {
+        video.pause();
+        card.classList.remove('playing');
+    } else {
+        video.play().catch(() => {
+            // Fallback silencioso caso autoplay/bloqueio impeça a reprodução
+            card.classList.remove('playing');
+        });
+        card.classList.add('playing');
+    }
 }
 
