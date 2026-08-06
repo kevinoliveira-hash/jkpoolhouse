@@ -1,38 +1,40 @@
-# ✅ JK Pool House - Plano de Melhorias (Nova Rodada)
+# ✅ JK Pool House - Plano de Polimento Profissional (Produção)
 
-## Status: ✅ CONCLUÍDO
+## Status: 🔄 EM ANDAMENTO
 
-### 🔧 Etapas do Plano
+### 🎯 Objetivo
+Preparar o projeto para produção mantendo o conceito atual, corrigindo bugs, melhorando SEO, performance, acessibilidade, responsividade e usabilidade em qualquer dispositivo.
 
-- [x] 0. Analisar código (HTML, CSS, JS)
-- [x] 1. index.html: carregar fontes e CSS via `<link>` (remover `@import` bloqueante)
-- [x] 2. css/style.css: remover `@import` de Google Fonts e CSS locais
-- [x] 3. css/style.css: adicionar estilos do cursor customizado (`.custom-cursor`)
-- [x] 4. css/style.css: adicionar `.nav-cta.mobile-show` (botão Reservar no menu mobile)
-- [x] 5. css/style.css: tipografia fluida com `clamp()`
-- [x] 6. css/style.css: `scroll-margin-top` para âncoras não ficarem ocultas
-- [x] 7. css/style.css: fallback de `backdrop-filter` (navegadores antigos)
-- [x] 8. css/style.css: `content-visibility` para performance
-- [x] 9. css/responsive.css: breakpoint intermediário (992px - 1120px)
-- [x] 10. js/main.js: criar função `toggleVideo` (corrigir vídeos quebrados)
-- [x] 11. js/main.js: atualizar `aria-expanded` no FAQ (acessibilidade)
-- [x] 12. js/main.js: ativar classe `cursor-enabled`
-- [x] 13. Atualizar relatório final
+### 📋 Etapas do Plano
+
+- [ ] 1. index.html: codificar URLs com espaços (%20) em og:image, twitter:image, Schema.org e preload
+- [ ] 2. index.html: adicionar og:image:alt e width/height em imagens acima da dobra (reduzir CLS)
+- [ ] 3. index.html: adicionar decoding="async" na imagem hero
+- [ ] 4. index.html: adicionar aria-controls no hamburger
+- [ ] 5. index.html: remover console.log do registro do Service Worker
+- [ ] 6. index.html: adicionar Schema.org FAQPage (JSON-LD)
+- [ ] 7. index.html: referenciar novo favicon SVG real da marca
+- [ ] 8. assets/icons/favicon.svg: criar favicon real da marca
+- [ ] 9. js/notifications.js: remover console.log
+- [ ] 10. js/notifications.js: renomear showToast -> showNotificationToast (eliminar conflito)
+- [ ] 11. js/social-share.js: corrigir bug de codificação do link WhatsApp
+- [ ] 12. js/whatsapp.js: substituir alert() por feedback amigável inline
+- [ ] 13. js/whatsapp.js: sanitizar valores do formulário (proteção XSS)
+- [ ] 14. css/style.css: prevenir cortes de imagens (object-position/aspect-ratio/contain)
+- [ ] 15. css/style.css: evitar CLS em vídeos e mapa (min-height/background)
+- [ ] 16. css/responsive.css: ajustar imagens em todas as resoluções (320px-1920px)
+- [ ] 17. manifest.json: corrigir ícones/sizes
+- [ ] 18. TODO.md: documentar melhorias realizadas
 
 ### 📊 Resumo das Alterações
 
 | Arquivo | Principais Mudanças |
 |---------|-------------------|
-| `index.html` | Fontes e CSS via `<link>` para carregamento otimizado |
-| `css/style.css` | Cursor customizado, mobile-show, clamp(), scroll-margin, fallbacks, performance |
-| `css/responsive.css` | Breakpoint intermediário 992-1120px |
-| `js/main.js` | `toggleVideo()` (play/pause com pausa dos demais), `aria-expanded` sincronizado no FAQ, ativação da classe `cursor-enabled` no body |
-| `TODO.md` | Relatório final de conclusão |
-
-### 🎯 Detalhes das Implementações em `js/main.js`
-
-1. **`toggleVideo(card)`** — Função global chamada via `onclick` no `index.html`. Reproduz/pausa o vídeo do card clicado, pausa automaticamente todos os outros vídeos da seção e alterna a classe `.playing` (estilizada no CSS para ocultar o botão ▶). Inclui `catch()` silencioso para bloqueio de autoplay.
-2. **`initFaq()`** — Agora sincroniza o atributo `aria-expanded="true/false"` nos botões do FAQ ao abrir/fechar, melhorando a acessibilidade para leitores de tela.
-3. **`initCustomCursor()`** — Adiciona `document.body.classList.add('cursor-enabled')` após a verificação de touch, ativando a visibilidade do cursor customizado definida em `css/style.css` (`body.cursor-enabled`).
-
-
+| `index.html` | SEO, favicon, acessibilidade, CLS, JSON-LD |
+| `assets/icons/favicon.svg` | Favicon real da marca |
+| `js/notifications.js` | Limpeza console.log, fix conflito showToast |
+| `js/social-share.js` | Fix codificação WhatsApp |
+| `js/whatsapp.js` | Feedback amigável, sanitização XSS |
+| `css/style.css` | Prevenção de cortes de imagem, CLS |
+| `css/responsive.css` | Imagens responsivas |
+| `manifest.json` | Ícones corrigidos |

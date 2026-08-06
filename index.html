@@ -25,9 +25,10 @@
     <meta property="og:url" content="https://jkpoolhouse.com.br/">
     <meta property="og:title" content="JK Pool House - Casa com Piscina para Festas e Eventos em SP">
     <meta property="og:description" content="Espaço premium com piscina, churrasqueira, área gourmet e palco. Day Use para 120 pessoas ou pernoite para 20 hóspedes. Reserve sua data!">
-    <meta property="og:image" content="https://jkpoolhouse.com.br/imagens/piscina com hidro.jpg">
+<meta property="og:image" content="https://jkpoolhouse.com.br/imagens/piscina%20com%20hidro.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="JK Pool House - Piscina com hidromassagem e área de lazer">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="JK Pool House">
     
@@ -36,7 +37,7 @@
     <meta name="twitter:url" content="https://jkpoolhouse.com.br/">
     <meta name="twitter:title" content="JK Pool House - Casa com Piscina para Festas e Eventos">
     <meta name="twitter:description" content="Espaço premium com piscina, churrasqueira, área gourmet e palco. Day Use e Pernoite em São Paulo.">
-    <meta name="twitter:image" content="https://jkpoolhouse.com.br/imagens/piscina com hidro.jpg">
+<meta name="twitter:image" content="https://jkpoolhouse.com.br/imagens/piscina%20com%20hidro.jpg">
     
     <!-- Schema.org - LocalBusiness (SEO local) -->
     <script type="application/ld+json">
@@ -45,7 +46,7 @@
         "@type": "LocalBusiness",
         "name": "JK Pool House",
         "description": "Espaço premium para eventos, lazer e hospedagem com piscina, churrasqueira, área gourmet e palco em São Paulo.",
-        "image": "https://jkpoolhouse.com.br/imagens/piscina com hidro.jpg",
+"image": "https://jkpoolhouse.com.br/imagens/piscina%20com%20hidro.jpg",
         "url": "https://jkpoolhouse.com.br/",
         "telephone": "+5511966152805",
         "priceRange": "$$",
@@ -121,16 +122,17 @@
     }
     </script>
     
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="imagens/logo.jpg">
     
     <!-- Preconnect para Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
-    <!-- Preload hero image for performance -->
-    <link rel="preload" href="imagens/piscina com hidro.jpg" as="image" fetchpriority="high">
+<!-- Preload hero image for performance -->
+    <link rel="preload" href="imagens/piscina%20com%20hidro.jpg" as="image" fetchpriority="high">
     
     <!-- PWA - Progressive Web App -->
     <link rel="manifest" href="manifest.json">
@@ -187,7 +189,7 @@
                 <span class="nav-logo-text">JK Pool House</span>
             </a>
 
-            <div class="nav-links" role="menubar" aria-label="Menu de navegação">
+<div class="nav-links" id="nav-links" role="menubar" aria-label="Menu de navegação">
                 <a href="#experience" role="menuitem">Experiência</a>
                 <a href="#highlights" role="menuitem">Estrutura</a>
                 <a href="#gallery" role="menuitem">Galeria</a>
@@ -198,7 +200,7 @@
                 <a href="#" class="nav-cta" data-action="whatsapp" role="menuitem">Reservar</a>
             </div>
 
-            <button class="hamburger" aria-label="Abrir ou fechar menu" aria-expanded="false">
+<button class="hamburger" aria-label="Abrir ou fechar menu" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1183,12 +1185,9 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(function(registration) {
-                        console.log('Service Worker registrado:', registration.scope);
-                    })
+navigator.serviceWorker.register('service-worker.js')
                     .catch(function(error) {
-                        console.log('Falha ao registrar Service Worker:', error);
+                        // Silencioso - apenas registra falha em desenvolvimento
                     });
             });
         }
