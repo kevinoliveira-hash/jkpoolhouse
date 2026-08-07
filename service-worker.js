@@ -12,15 +12,8 @@ const STATIC_ASSETS = [
     '/css/animations.css',
     '/js/main.js',
     '/js/gallery.js',
-    '/js/modal.js',
     '/js/whatsapp.js',
-    '/js/calendar.js',
     '/js/cookie-banner.js',
-    '/js/social-share.js',
-    '/js/analytics.js',
-    '/js/notifications.js',
-    '/js/performance.js',
-    '/js/blog.js',
     '/manifest.json',
     '/imagens/logo.jpg',
     '/imagens/piscina com hidro.jpg'
@@ -80,28 +73,5 @@ self.addEventListener('fetch', (event) => {
     );
 });
 
-// Handle push notifications
-self.addEventListener('push', (event) => {
-    const data = event.data.json();
-    const options = {
-        body: data.body || 'Novidades na JK Pool House!',
-        icon: '/imagens/logo.jpg',
-        badge: '/imagens/logo.jpg',
-        vibrate: [200, 100, 200],
-        data: {
-            url: data.url || '/'
-        }
-    };
-    event.waitUntil(
-        self.registration.showNotification(data.title || 'JK Pool House', options)
-    );
-});
 
-// Handle notification click
-self.addEventListener('notificationclick', (event) => {
-    event.notification.close();
-    event.waitUntil(
-        clients.openWindow(event.notification.data.url)
-    );
-});
 

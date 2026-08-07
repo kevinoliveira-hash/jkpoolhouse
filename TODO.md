@@ -1,5 +1,22 @@
 # ✅ JK Pool House - Plano de Polimento Profissional (Produção)
 
+## ✅ Limpeza de Código Não Utilizado / Duplicidades
+
+- [x] Removido `js/calendar.js` (nunca usado - sem container `#calendar`)
+- [x] Removido `js/modal.js` (sem modais no HTML)
+- [x] Removido `js/blog.js` (seção de blog nunca integrada)
+- [x] Removido `js/notifications.js` (push notifications sem backend/VAPID)
+- [x] Removido `js/analytics.js` (desativado - GA_CONFIG.enabled=false)
+- [x] Removido `js/performance.js` (duplicava CSS crítico, WebP placeholder)
+- [x] Removido `js/social-share.js` (botão flutuante sobreposto + conflito `showToast`)
+- [x] Removida referência aos arquivos removidos no `service-worker.js`
+- [x] Removido handler de push/notification do `service-worker.js`
+- [x] Removido CSS de `BOOKING MODAL` (`.modal-*`) de `style.css`
+- [x] Removida regra global `[class*="scroll"]{display:none}` de `responsive.css`
+- [x] Corrigido z-index do scroll progress (inline 1000 → CSS class `.scroll-progress` z-index 50)
+- [x] Removida função morta `enhanceCounters` (duplicada de `initCounters`)
+- [x] Atualizado `robots.txt` (removido Disallow de analytics/performance)
+
 ## Status: 🔄 EM ANDAMENTO
 
 ### 🎯 Objetivo

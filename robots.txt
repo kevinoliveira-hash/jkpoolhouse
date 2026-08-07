@@ -11,8 +11,6 @@ Allow: /assets/
 
 Disallow: /cgi-bin/
 Disallow: /admin/
-Disallow: /js/analytics.js
-Disallow: /js/performance.js
 
 # Sitemap
 Sitemap: https://jkpoolhouse.com.br/sitemap.xml

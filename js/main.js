@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initSmoothScroll();
     initParallax();
-    enhanceCounters();
     initInstagramFeed();
     initScrollProgress();
     initKeyboardNav();
@@ -359,26 +358,6 @@ function initParallax() {
 }
 
 // ============================================================
-// INTERACTIVE COUNTERS WITH PLUS SIGN
-// ============================================================
-function enhanceCounters() {
-    document.querySelectorAll('.counter-number').forEach(function(counter) {
-        var target = parseInt(counter.getAttribute('data-target'));
-        if (target > 1 && !isNaN(target)) {
-            var observer = new MutationObserver(function() {
-                var currentText = counter.textContent.replace(/[^0-9]/g, '');
-                if (currentText === target.toString()) {
-                    var prefix = counter.getAttribute('data-prefix') || '';
-                    counter.textContent = prefix + target + '+';
-                    observer.disconnect();
-                }
-            });
-            observer.observe(counter, { childList: true, characterData: true, subtree: true });
-        }
-    });
-}
-
-// ============================================================
 // INSTAGRAM FEED SIMULATION
 // ============================================================
 function initInstagramFeed() {
@@ -405,7 +384,7 @@ function initInstagramFeed() {
 // ============================================================
 function initScrollProgress() {
     const bar = document.createElement('div');
-    bar.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,#B8960F,#D4AF37,#F4D27A);transform-origin:left center;transform:scaleX(0);z-index:1000;transition:transform 0.1s ease;';
+    bar.className = 'scroll-progress';
     document.body.appendChild(bar);
 
     window.addEventListener('scroll', function() {

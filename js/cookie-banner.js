@@ -137,10 +137,6 @@ function acceptCookies() {
         banner.classList.remove('show');
         setTimeout(() => banner.remove(), 600);
     }
-    // Enable analytics
-    if (typeof enableAnalytics === 'function') {
-        enableAnalytics();
-    }
 }
 
 function rejectCookies() {
