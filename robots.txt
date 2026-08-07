@@ -21,3 +21,4 @@ Crawl-delay: 5
 # Host
 Host: https://jkpoolhouse.com.br
 
+Sitemap: https://jkpoolhouse.com.br/sitemap.xml
