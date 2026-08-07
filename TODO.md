@@ -25,6 +25,7 @@ Preparar o projeto para produção mantendo o conceito atual, corrigindo bugs, m
 - [ ] 16. css/responsive.css: ajustar imagens em todas as resoluções (320px-1920px)
 - [ ] 17. manifest.json: corrigir ícones/sizes
 - [ ] 18. TODO.md: documentar melhorias realizadas
+- [x] 19. Hero: corrigir sobreposição de texto nos botões (mantê-los lado a lado, sem esconder "Ver Galeria" no mobile)
 
 ### 📊 Resumo das Alterações
 
