@@ -367,10 +367,10 @@ function initInstagramFeed() {
     if (!grid) return;
 
     const instagramImages = [
-        { src: 'imagens/piscina com hidro.jpg', alt: 'JK Pool House - Piscina' },
-        { src: 'imagens/area gourmet.jpg', alt: 'JK Pool House - Área Gourmet' },
-        { src: 'imagens/area lazer.jpg', alt: 'JK Pool House - Lazer' },
-        { src: 'imagens/churrasqueira e  cozinha.jpg', alt: 'JK Pool House - Churrasqueira' }
+        { src: 'imagens/piscina_com_hidro.jpg', alt: 'JK Pool House - Piscina' },
+        { src: 'imagens/area_gourmet.jpg', alt: 'JK Pool House - Área Gourmet' },
+        { src: 'imagens/area_lazer.jpg', alt: 'JK Pool House - Lazer' },
+        { src: 'imagens/churrasqueira_e_cozinha.jpg', alt: 'JK Pool House - Churrasqueira' }
     ];
 
     instagramImages.forEach(img => {
