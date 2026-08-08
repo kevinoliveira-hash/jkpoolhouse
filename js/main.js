@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initSmoothScroll();
     initParallax();
-    enhanceCounters();
     initInstagramFeed();
     initScrollProgress();
     initKeyboardNav();
@@ -26,43 +25,55 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================================
 // LOADER (otimizado para mobile - mais rápido)
 // ============================================================
+function debounce(func, wait) {
+    var timeout;
+    return function executedFunction() {
+        var context = this;
+        var args = arguments;
+        var later = function() {
+            timeout = null;
+            func.apply(context, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
 function initLoader() {
-    const loader = document.querySelector('.loader');
-    const loaderBar = document.querySelector('.loader-bar-fill');
+    var loader = document.querySelector('.loader');
+    var loaderBar = document.querySelector('.loader-bar-fill');
     
     if (!loader) return;
     
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    var isMobile = window.matchMedia('(max-width: 767px)').matches;
     
     if (isMobile) {
-        // Mobile: esconde rápido, sem animação
         if (loaderBar) loaderBar.style.width = '100%';
-        setTimeout(() => {
+        setTimeout(function() {
             loader.classList.add('hidden');
             document.body.style.overflow = 'visible';
         }, 200);
         return;
     }
     
-    // Desktop: animação suave
-    let progress = 0;
-    const interval = setInterval(() => {
+    var progress = 0;
+    var interval = setInterval(function() {
         progress += Math.random() * 15;
         if (progress > 100) progress = 100;
         if (loaderBar) loaderBar.style.width = progress + '%';
         if (progress === 100) {
             clearInterval(interval);
-            setTimeout(() => {
+            setTimeout(function() {
                 loader.classList.add('hidden');
                 document.body.style.overflow = 'visible';
             }, 300);
         }
     }, 150);
     
-    setTimeout(() => {
+    setTimeout(function() {
         if (!loader.classList.contains('hidden')) {
             if (loaderBar) loaderBar.style.width = '100%';
-            setTimeout(() => {
+            setTimeout(function() {
                 loader.classList.add('hidden');
                 document.body.style.overflow = 'visible';
             }, 200);
@@ -85,6 +96,9 @@ function initCustomCursor() {
         follower.style.display = 'none';
         return;
     }
+    
+    // Enable custom cursor visibility (CSS: body.cursor-enabled)
+    document.body.classList.add('cursor-enabled');
     
     let mouseX = 0;
     let mouseY = 0;
@@ -159,7 +173,7 @@ function initNavbar() {
             navbar.classList.remove('scrolled');
         }
         
-        // Hide/show navbar on scroll direction
+    // Hide/show navbar on scroll direction
         if (currentScroll > lastScroll && currentScroll > 200) {
             navbar.style.transform = 'translateY(-100%)';
         } else {
@@ -167,7 +181,7 @@ function initNavbar() {
         }
         
         lastScroll = currentScroll;
-    });
+    }, { passive: true });
     
     // Mobile menu
     if (hamburger && navLinks) {
@@ -270,11 +284,14 @@ function initFaq() {
             faqItems.forEach(other => {
                 if (other !== item) {
                     other.classList.remove('active');
+                    const otherQuestion = other.querySelector('.faq-question');
+                    if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
                 }
             });
             
             // Toggle current
-            item.classList.toggle('active');
+            const isActive = item.classList.toggle('active');
+            question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
         });
     });
 }
@@ -341,25 +358,6 @@ function initParallax() {
 }
 
 // ============================================================
-// INTERACTIVE COUNTERS WITH PLUS SIGN
-// ============================================================
-function enhanceCounters() {
-    document.querySelectorAll('.counter-number').forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        if (target > 1) {
-            const observer = new MutationObserver(() => {
-                if (counter.textContent.includes(target.toString())) {
-                    const prefix = counter.getAttribute('data-prefix') || '';
-                    counter.textContent = prefix + target + '+';
-                    observer.disconnect();
-                }
-            });
-            observer.observe(counter, { childList: true, characterData: true, subtree: true });
-        }
-    });
-}
-
-// ============================================================
 // INSTAGRAM FEED SIMULATION
 // ============================================================
 function initInstagramFeed() {
@@ -386,7 +384,7 @@ function initInstagramFeed() {
 // ============================================================
 function initScrollProgress() {
     const bar = document.createElement('div');
-    bar.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,#B8960F,#D4AF37,#F4D27A);transform-origin:left center;transform:scaleX(0);z-index:1000;transition:transform 0.1s ease;';
+    bar.className = 'scroll-progress';
     document.body.appendChild(bar);
 
     window.addEventListener('scroll', function() {
@@ -419,5 +417,38 @@ function updateCopyrightYear() {
         const year = new Date().getFullYear();
         el.textContent = el.textContent.replace(/\d{4}/, year);
     });
+}
+
+// ============================================================
+// VIDEO TOGGLE (play/pause) - chamado via onclick no index.html
+// ============================================================
+function toggleVideo(card) {
+    if (!card) return;
+
+    const video = card.querySelector('video');
+
+    if (!video) return;
+
+    // Pausa todos os outros vídeos
+    document.querySelectorAll('.video-card video').forEach(otherVideo => {
+        if (otherVideo !== video) {
+            otherVideo.pause();
+            const otherCard = otherVideo.closest('.video-card');
+            if (otherCard) otherCard.classList.remove('playing');
+        }
+    });
+
+    const isPlaying = card.classList.contains('playing');
+
+    if (isPlaying) {
+        video.pause();
+        card.classList.remove('playing');
+    } else {
+        video.play().catch(() => {
+            // Fallback silencioso caso autoplay/bloqueio impeça a reprodução
+            card.classList.remove('playing');
+        });
+        card.classList.add('playing');
+    }
 }
 

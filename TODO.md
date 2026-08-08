@@ -1,38 +1,58 @@
-# ✅ Todas as Melhorias Concluídas - JK Pool House
+# ✅ JK Pool House - Plano de Polimento Profissional (Produção)
 
-## Resumo das Melhorias Realizadas
+## ✅ Limpeza de Código Não Utilizado / Duplicidades
 
-### 📁 Arquivos Removidos
-- ✅ `script.js` (funcionalidades movidas para `js/main.js` e `js/whatsapp.js`)
-- ✅ `paginainicial.html` (apenas redirecionava)
+- [x] Removido `js/calendar.js` (nunca usado - sem container `#calendar`)
+- [x] Removido `js/modal.js` (sem modais no HTML)
+- [x] Removido `js/blog.js` (seção de blog nunca integrada)
+- [x] Removido `js/notifications.js` (push notifications sem backend/VAPID)
+- [x] Removido `js/analytics.js` (desativado - GA_CONFIG.enabled=false)
+- [x] Removido `js/performance.js` (duplicava CSS crítico, WebP placeholder)
+- [x] Removido `js/social-share.js` (botão flutuante sobreposto + conflito `showToast`)
+- [x] Removida referência aos arquivos removidos no `service-worker.js`
+- [x] Removido handler de push/notification do `service-worker.js`
+- [x] Removido CSS de `BOOKING MODAL` (`.modal-*`) de `style.css`
+- [x] Removida regra global `[class*="scroll"]{display:none}` de `responsive.css`
+- [x] Corrigido z-index do scroll progress (inline 1000 → CSS class `.scroll-progress` z-index 50)
+- [x] Removida função morta `enhanceCounters` (duplicada de `initCounters`)
+- [x] Atualizado `robots.txt` (removido Disallow de analytics/performance)
 
-### 📁 Arquivos Modificados
+## Status: 🔄 EM ANDAMENTO
 
+### 🎯 Objetivo
+Preparar o projeto para produção mantendo o conceito atual, corrigindo bugs, melhorando SEO, performance, acessibilidade, responsividade e usabilidade em qualquer dispositivo.
 
-#### `index.html`
-- ✅ Removida referência ao `script.js`
-- ✅ Seção de vídeos corrigida: `<video>` com `src="#"` substituído por cards estáticos com imagem
-- ✅ Adicionada descrição nos cards de vídeo
+### 📋 Etapas do Plano
 
-#### `js/main.js`
-- ✅ Incorporado `initParallax()` do antigo `script.js`
-- ✅ Incorporado `enhanceCounters()` - adiciona "+" nos contadores
-- ✅ Incorporado `initInstagramFeed()` - carrega grid do Instagram
-- ✅ Incorporado `initScrollProgress()` - barra de progresso dourada no topo
-- ✅ Incorporado `initKeyboardNav()` - acessibilidade por teclado
-- ✅ Incorporado `updateCopyrightYear()` - ano dinâmico no footer
-- ✅ `initSmoothScroll()` melhorado com offset de 80px para navbar fixa
+- [ ] 1. index.html: codificar URLs com espaços (%20) em og:image, twitter:image, Schema.org e preload
+- [ ] 2. index.html: adicionar og:image:alt e width/height em imagens acima da dobra (reduzir CLS)
+- [ ] 3. index.html: adicionar decoding="async" na imagem hero
+- [ ] 4. index.html: adicionar aria-controls no hamburger
+- [ ] 5. index.html: remover console.log do registro do Service Worker
+- [ ] 6. index.html: adicionar Schema.org FAQPage (JSON-LD)
+- [ ] 7. index.html: referenciar novo favicon SVG real da marca
+- [ ] 8. assets/icons/favicon.svg: criar favicon real da marca
+- [ ] 9. js/notifications.js: remover console.log
+- [ ] 10. js/notifications.js: renomear showToast -> showNotificationToast (eliminar conflito)
+- [ ] 11. js/social-share.js: corrigir bug de codificação do link WhatsApp
+- [ ] 12. js/whatsapp.js: substituir alert() por feedback amigável inline
+- [ ] 13. js/whatsapp.js: sanitizar valores do formulário (proteção XSS)
+- [ ] 14. css/style.css: prevenir cortes de imagens (object-position/aspect-ratio/contain)
+- [ ] 15. css/style.css: evitar CLS em vídeos e mapa (min-height/background)
+- [ ] 16. css/responsive.css: ajustar imagens em todas as resoluções (320px-1920px)
+- [ ] 17. manifest.json: corrigir ícones/sizes
+- [ ] 18. TODO.md: documentar melhorias realizadas
+- [x] 19. Hero: corrigir sobreposição de texto nos botões (mantê-los lado a lado, sem esconder "Ver Galeria" no mobile)
 
-#### `js/whatsapp.js`
-- ✅ Incorporado `initFormValidation()` - validação visual de campos obrigatórios
+### 📊 Resumo das Alterações
 
-#### `css/style.css`
-- ✅ Adicionado estilo `.video-desc` para descrições nos cards de vídeo
-
-### 🎯 Principais Benefícios
-- ✅ **Código mais limpo**: 6 arquivos JS → 5 (removida duplicação)
-- ✅ **Sem dependências quebradas**: Seção de vídeos agora funcional com imagens
-- ✅ **Responsividade**: Footer e hero ajustados em mobile
-- ✅ **Manutenibilidade**: Código JS unificado, sem redundâncias
-- ✅ **Pronto para cliente**: Protótipo apresentável e expansível
-
+| Arquivo | Principais Mudanças |
+|---------|-------------------|
+| `index.html` | SEO, favicon, acessibilidade, CLS, JSON-LD |
+| `assets/icons/favicon.svg` | Favicon real da marca |
+| `js/notifications.js` | Limpeza console.log, fix conflito showToast |
+| `js/social-share.js` | Fix codificação WhatsApp |
+| `js/whatsapp.js` | Feedback amigável, sanitização XSS |
+| `css/style.css` | Prevenção de cortes de imagem, CLS |
+| `css/responsive.css` | Imagens responsivas |
+| `manifest.json` | Ícones corrigidos |

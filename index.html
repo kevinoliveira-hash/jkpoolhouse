@@ -2,27 +2,33 @@
 <html lang="pt-BR">
 <head>
     <!-- ============================================================
-    META TAGS - SEO & Social (Optimizado)
+    META TAGS - SEO & Social (Otimizado)
     ============================================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JK Pool House - Aluguel de Casa com Piscina para Festas e Eventos em São Paulo</title>
+    <title>JK Pool House - Casa com Piscina para Festas e Eventos em São Paulo</title>
     <meta name="description" content="JK Pool House: Casa com piscina, churrasqueira, área gourmet e palco para festas, eventos e hospedagem em São Paulo. Capacidade para 120 pessoas. Day Use e Pernoite. Reserve agora!">
-    <meta name="keywords" content="JK Pool House, aluguel casa piscina São Paulo, espaço para festas, churrasqueira gourmet, day use São Paulo, casa para evento, piscina com hidromassagem, salão de festas SP, pernoite, lazer">
+    <meta name="keywords" content="JK Pool House, aluguel de casa com piscina São Paulo, espaço para festas, churrasqueira gourmet, day use São Paulo, casa para evento, piscina com hidromassagem, salão de festas SP, pernoite, lazer, ferraz de vasconcelos">
     <meta name="author" content="JK Pool House">
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="BR-SP">
-    <meta name="geo.placename" content="São Paulo">
+    <meta name="geo.placename" content="Ferraz de Vasconcelos, São Paulo">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="canonical" href="https://jkpoolhouse.com.br/">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" href="https://jkpoolhouse.com.br/" hreflang="pt-BR" />
+    <link rel="alternate" href="https://jkpoolhouse.com.br/" hreflang="x-default" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jkpoolhouse.com.br/">
     <meta property="og:title" content="JK Pool House - Casa com Piscina para Festas e Eventos em SP">
     <meta property="og:description" content="Espaço premium com piscina, churrasqueira, área gourmet e palco. Day Use para 120 pessoas ou pernoite para 20 hóspedes. Reserve sua data!">
-    <meta property="og:image" content="imagens/piscina_com_hidro.jpg">
+    <meta property="og:image" content="https://jkpoolhouse.com.br/imagens/piscina_com_hidro.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="JK Pool House - Piscina com hidromassagem e área de lazer">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="JK Pool House">
     
@@ -31,7 +37,7 @@
     <meta name="twitter:url" content="https://jkpoolhouse.com.br/">
     <meta name="twitter:title" content="JK Pool House - Casa com Piscina para Festas e Eventos">
     <meta name="twitter:description" content="Espaço premium com piscina, churrasqueira, área gourmet e palco. Day Use e Pernoite em São Paulo.">
-    <meta name="twitter:image" content="imagens/piscina_com_hidro.jpg">
+<meta name="twitter:image" content="https://jkpoolhouse.com.br/imagens/piscina_com_hidro.jpg">
     
     <!-- Schema.org - LocalBusiness (SEO local) -->
     <script type="application/ld+json">
@@ -40,14 +46,16 @@
         "@type": "LocalBusiness",
         "name": "JK Pool House",
         "description": "Espaço premium para eventos, lazer e hospedagem com piscina, churrasqueira, área gourmet e palco em São Paulo.",
-        "image": "imagens/piscina_com_hidro.jpg",
+"image": "https://jkpoolhouse.com.br/imagens/piscina_com_hidro.jpg",
         "url": "https://jkpoolhouse.com.br/",
         "telephone": "+5511966152805",
         "priceRange": "$$",
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "São Paulo",
+            "streetAddress": "Avenida Luiz Antonio de Paiva, 771",
+            "addressLocality": "Ferraz de Vasconcelos",
             "addressRegion": "SP",
+            "postalCode": "08500-000",
             "addressCountry": "BR"
         },
         "openingHoursSpecification": [
@@ -79,25 +87,85 @@
         ]
     }
     </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": "https://jkpoolhouse.com.br/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Experiência",
+                "item": "https://jkpoolhouse.com.br/#experience"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Reservas",
+                "item": "https://jkpoolhouse.com.br/#dayuse"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Contato",
+                "item": "https://jkpoolhouse.com.br/#contact"
+            }
+        ]
+    }
+    </script>
     
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+<!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="imagens/logo.jpg">
     
-    <!-- Preload hero image for performance -->
-    <link rel="preload" href="imagens/piscina_com_hidro.jpg" as="image">
+    <!-- Preconnect para Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
+<!-- Preload hero image for performance -->
+    <link rel="preload" href="imagens/piscina_com_hidro.jpg" as="image" fetchpriority="high">
+    
+    <!-- PWA - Progressive Web App -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D4AF37">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="JK Pool House">
+    <link rel="apple-touch-icon" href="imagens/logo.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
     <!-- ============================================================
+    SKIP TO CONTENT (Acessibilidade)
+    ============================================================ -->
+    <a href="#main-content" class="skip-to-content" aria-label="Pular para o conteúdo principal">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- ============================================================
     LOADING SCREEN
     ============================================================ -->
     <div class="loader" role="status" aria-label="Carregando">
         <div class="loader-logo">
-            <img src="imagens/logo.jpg" alt="JK Pool House - Carregando" loading="eager">
+            <img src="imagens/logo.jpg" alt="JK Pool House - Carregando" loading="eager" fetchpriority="high">
         </div>
         <div class="loader-bar" aria-hidden="true">
             <div class="loader-bar-fill"></div>
@@ -116,12 +184,12 @@
     ============================================================ -->
     <nav class="navbar" role="navigation" aria-label="Navegação principal">
         <div class="container">
-            <a href="#" class="nav-logo" aria-label="JK Pool House - Início">
-                <img src="imagens/logo.jpg" alt="JK Pool House Logo" loading="eager">
+            <a href="#" class="nav-logo" aria-label="JK Pool House - Página inicial">
+                <img src="imagens/logo.jpg" alt="JK Pool House - Logo" loading="eager" fetchpriority="high">
                 <span class="nav-logo-text">JK Pool House</span>
             </a>
 
-            <div class="nav-links" role="menubar">
+<div class="nav-links" id="nav-links" role="menubar" aria-label="Menu de navegação">
                 <a href="#experience" role="menuitem">Experiência</a>
                 <a href="#highlights" role="menuitem">Estrutura</a>
                 <a href="#gallery" role="menuitem">Galeria</a>
@@ -132,7 +200,7 @@
                 <a href="#" class="nav-cta" data-action="whatsapp" role="menuitem">Reservar</a>
             </div>
 
-            <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+<button class="hamburger" aria-label="Abrir ou fechar menu" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -143,9 +211,9 @@
     <!-- ============================================================
     HERO SECTION
     ============================================================ -->
-    <section class="hero" id="home" aria-label="JK Pool House - Herói">
+    <section class="hero" id="home" aria-label="JK Pool House - Seção principal">
         <div class="hero-background">
-            <img src="imagens/piscina_com_hidro.jpg" alt="JK Pool House - Piscina com hidromassagem" loading="eager">
+            <img src="imagens/piscina_com_hidro.jpg" alt="JK Pool House - Piscina com hidromassagem e área de lazer" loading="eager" fetchpriority="high">
         </div>
         <div class="hero-overlay"></div>
 
@@ -165,7 +233,7 @@
 
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="imagens/logo.jpg" alt="JK Pool House" loading="eager">
+                <img src="imagens/logo.jpg" alt="JK Pool House - Marca" loading="eager" fetchpriority="high">
             </div>
             <h1 class="hero-brand-name">JK Pool House</h1>
             <h2 class="hero-title">O lugar perfeito para viver momentos inesquecíveis</h2>
@@ -176,18 +244,12 @@
                 <a href="#" class="btn btn-primary" data-action="whatsapp" data-reserve="info">
                     Reservar Agora
                 </a>
-                <a href="#gallery" class="btn btn-secondary">
-                    Ver Galeria
-                </a>
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator" aria-hidden="true">
-            <span class="scroll-indicator-text">Role para explorar</span>
-            <div class="scroll-indicator-line"></div>
-        </div>
-    </section>
+</section>
+
+    <main id="main-content">
 
     <!-- ============================================================
     EXPERIENCE SECTION
@@ -205,7 +267,7 @@
 
             <div class="about-content">
                 <div class="about-image reveal-left">
-                    <img src="imagens/area_externa.jpg" alt="Área externa JK Pool House" loading="lazy">
+                    <img src="imagens/area_externa.jpg" alt="Área externa da JK Pool House com piscina e área de lazer" loading="lazy">
                 </div>
                 <div class="about-text reveal-right">
                     <h3>Exclusividade, conforto e sofisticação</h3>
@@ -367,7 +429,7 @@
     <!-- ============================================================
     COUNTERS SECTION
     ============================================================ -->
-    <section class="section counters" aria-label="Números JK Pool House">
+    <section class="section counters" aria-label="Números da JK Pool House">
         <div class="container">
             <div class="counter-grid">
                 <div class="counter-item reveal">
@@ -431,7 +493,7 @@
                 <div class="tour-card reveal" style="transition-delay: 0.1s">
                     <div class="tour-image">
                         <span class="tour-image-badge">1º Andar</span>
-                        <img src="imagens/area_gourmet.jpg" alt="Primeiro andar - Área gourmet e lazer" loading="lazy">
+                        <img src="imagens/area_gourmet.jpg" alt="Primeiro andar - Área gourmet e lazer da JK Pool House" loading="lazy">
                     </div>
                     <!-- <div class="tour-info">
                         <h3 class="tour-title">Primeiro Andar</h3>
@@ -458,7 +520,7 @@
                 <div class="tour-card reveal" style="transition-delay: 0.2s">
                     <div class="tour-image">
                         <span class="tour-image-badge">2º Andar</span>
-                        <img src="imagens/sala_sinuca.jpg" alt="Segundo andar - Sala de jogos" loading="lazy">
+                        <img src="imagens/sala_sinuca.jpg" alt="Segundo andar - Sala de jogos e sinuca" loading="lazy">
                     </div>
                     <!-- <div class="tour-info">
                         <h3 class="tour-title">Segundo Andar</h3>
@@ -484,7 +546,7 @@
                 <div class="tour-card reveal" style="transition-delay: 0.3s">
                     <div class="tour-image">
                         <span class="tour-image-badge">3º Andar</span>
-                        <img src="imagens/quarto_solteiros.jpg" alt="Terceiro andar - Quartos" loading="lazy">
+                        <img src="imagens/quarto_solteiros.jpg" alt="Terceiro andar - Quartos e suíte master" loading="lazy">
                     </div>
                     <!-- <div class="tour-info">
                         <h3 class="tour-title">Terceiro Andar</h3>
@@ -606,7 +668,7 @@
     <!-- ============================================================
     COMPARISON TABLE SECTION
     ============================================================ -->
-    <section class="section comparison" aria-label="Comparativo Day Use vs Pernoite">
+    <section class="section comparison" aria-label="Comparativo Day Use e Pernoite">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">✦ Comparativo</span>
@@ -753,7 +815,7 @@
     <!-- ============================================================
     VIDEOS SECTION
     ============================================================ -->
-    <section class="section videos" id="videos" aria-label="Vídeos">
+    <section class="section videos" id="videos" aria-label="Vídeos do espaço">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">✦ Vídeos</span>
@@ -766,7 +828,7 @@
 
             <div class="video-grid">
                 <div class="video-card reveal" style="transition-delay: 0.1s" onclick="toggleVideo(this)">
-                    <video muted loop playsinline poster="imagens/piscina_com_hidro.jpg">
+                    <video muted loop playsinline preload="none" poster="imagens/piscina_com_hidro.jpg" aria-label="Vídeo da piscina e área externa da JK Pool House">
                         <source src="videos/video.mp4" type="video/mp4">
                     </video>
                     <div class="video-play-btn">▶</div>
@@ -776,7 +838,7 @@
                     </div>
                 </div>
                 <div class="video-card reveal" style="transition-delay: 0.2s" onclick="toggleVideo(this)">
-                    <video muted loop playsinline poster="imagens/sala_sinuca.jpg">
+                    <video muted loop playsinline preload="none" poster="imagens/sala_sinuca.jpg" aria-label="Vídeo do salão de jogos">
                         <source src="videos/video (1).mp4" type="video/mp4">
                     </video>
                     <div class="video-play-btn">▶</div>
@@ -786,7 +848,7 @@
                     </div>
                 </div>
                 <div class="video-card reveal" style="transition-delay: 0.3s" onclick="toggleVideo(this)">
-                    <video muted loop playsinline poster="imagens/area_gourmet.jpg">
+                    <video muted loop playsinline preload="none" poster="imagens/area_gourmet.jpg" aria-label="Vídeo da área gourmet">
                         <source src="videos/video (2).mp4" type="video/mp4">
                     </video>
                     <div class="video-play-btn">▶</div>
@@ -796,7 +858,7 @@
                     </div>
                 </div>
                 <div class="video-card reveal" style="transition-delay: 0.4s" onclick="toggleVideo(this)">
-                    <video muted loop playsinline poster="imagens/palco.jpg">
+                    <video muted loop playsinline preload="none" poster="imagens/palco.jpg" aria-label="Vídeo do palco e área de festas">
                         <source src="videos/video (3).mp4" type="video/mp4">
                     </video>
                     <div class="video-play-btn">▶</div>
@@ -886,7 +948,7 @@
                     </button>
                     <div class="faq-answer">
                         <p>Sim, aceitamos som. Temos sistema de som integrado e palco para apresentações. 
-                Respeitamos os horários permitidos por lei.</p>
+                        Respeitamos os horários permitidos por lei.</p>
                     </div>
                 </div>
 
@@ -959,7 +1021,8 @@
                         <div class="contact-icon">📍</div>
                         <div class="contact-text">
                             <strong>Localização</strong>
-                            Em local privilegiado - Consulte via WhatsApp
+                            Avenida Luiz Antonio de Paiva, 771<br>
+                            Jardim Ipanema - Ferraz de Vasconcelos - SP
                         </div>
                     </div>
 
@@ -999,15 +1062,15 @@
                     <h3 style="font-family: var(--font-heading); font-size: var(--text-xl); color: var(--color-gold); margin-bottom: var(--space-lg);">
                         Solicitar Reserva
                     </h3>
-                    <form id="reservationForm">
+                    <form id="reservationForm" novalidate>
                         <div class="form-group">
                             <label for="formName">Nome *</label>
-                            <input type="text" id="formName" name="name" required placeholder="Seu nome completo">
+                            <input type="text" id="formName" name="name" required placeholder="Seu nome completo" aria-required="true">
                         </div>
 
                         <div class="form-group">
                             <label for="formPhone">Telefone *</label>
-                            <input type="tel" id="formPhone" name="phone" required placeholder="(11) 99999-9999">
+                            <input type="tel" id="formPhone" name="phone" required placeholder="(11) 99999-9999" aria-required="true">
                         </div>
 
                         <div class="form-group">
@@ -1022,7 +1085,7 @@
 
                         <div class="form-group">
                             <label for="formDate">Data Pretendida</label>
-                            <input type="text" id="formDate" name="date" placeholder="DD/MM/AAAA" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <input type="date" id="formDate" name="date" placeholder="DD/MM/AAAA">
                         </div>
 
                         <div class="form-group">
@@ -1037,7 +1100,7 @@
 
                         <div class="form-group">
                             <label for="formObservations">Observações</label>
-                            <textarea id="formObservations" name="observations" placeholder="Conte-nos mais sobre seu evento..."></textarea>
+                            <textarea id="formObservations" name="observations" placeholder="Conte-nos mais sobre seu evento..." aria-label="Observações sobre o evento"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
@@ -1049,9 +1112,9 @@
 
             <!-- Map -->
             <div class="map-container reveal" id="location">
-                <!-- <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14622.00000000001!2d-46.6535!3d-23.5624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQ0LjYiUyA0NsKwMzknMTIuNiJX!5e0!3m2!1spt-BR!2sbr!4v1!4m5!1m4!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f7a16b5d8!2sS%C3%A3o%20Paulo!3e0" 
-                    title="Localização JK Pool House - Mapa"
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.5!2d-46.3685!3d-23.5410!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b5e8b5e5b5b%3A0x5b5e5b5e5b5e5b5e!2sAv.%20Luiz%20Antonio%20de%20Paiva%2C%20771%20-%20Jardim%20Ipanema%2C%20Ferraz%20de%20Vasconcelos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1" 
+                    title="JK Pool House - Av. Luiz Antonio de Paiva, 771 - Ferraz de Vasconcelos"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
@@ -1067,6 +1130,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- ============================================================
     FOOTER
     ============================================================ -->
@@ -1074,31 +1139,31 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand reveal">
-                    <img src="imagens/logo.jpg" alt="JK Pool House" loading="lazy">
+                    <img src="imagens/logo.jpg" alt="JK Pool House - Logo" loading="lazy">
                     <p>
                         JK Pool House - O lugar perfeito para viver momentos inesquecíveis 
                         com sua família e amigos. Experiência premium em lazer e hospedagem.
                     </p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Instagram" title="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <a href="https://www.instagram.com/jkpoolhouse/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da JK Pool House" title="Siga-nos no Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <rect x="2" y="2" width="20" height="20" rx="5"></rect>
                                 <circle cx="12" cy="12" r="5"></circle>
                                 <circle cx="17.5" cy="6.5" r="1.5"></circle>
                             </svg>
                         </a>
-                        <a href="#" aria-label="Facebook" title="Facebook">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <a href="https://facebook.com/jkpoolhouse" target="_blank" rel="noopener noreferrer" aria-label="Facebook da JK Pool House" title="Curta nossa página no Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                             </svg>
                         </a>
-                        <a href="#" aria-label="WhatsApp" title="WhatsApp" data-action="whatsapp">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <a href="#" data-action="whatsapp" aria-label="WhatsApp da JK Pool House" title="Fale conosco pelo WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H5l2.5-2.5A8.5 8.5 0 1 1 21 11.5z"></path>
                             </svg>
                         </a>
-                        <a href="#" aria-label="TikTok" title="TikTok">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <a href="https://tiktok.com/@jkpoolhouse" target="_blank" rel="noopener noreferrer" aria-label="TikTok da JK Pool House" title="Siga-nos no TikTok">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
                             </svg>
                         </a>
@@ -1153,93 +1218,61 @@
     WHATSAPP FLOATING BUTTON
     ============================================================ -->
     <a href="#" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp" title="Fale conosco pelo WhatsApp">
-        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.436 9.884-9.885 9.884z"/>
         </svg>
-        <span class="whatsapp-float-tooltip">Fale conosco!</span>
+        <span class="whatsapp-float-tooltip">Fale conosco</span>
     </a>
 
     <!-- ============================================================
     BACK TO TOP
     ============================================================ -->
     <button class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">
-        ↑
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
     </button>
 
     <!-- ============================================================
-    LIGHTBOX MODAL
+    LIGHTBOX
     ============================================================ -->
-    <div class="lightbox" role="dialog" aria-label="Visualizador de fotos">
+    <div class="lightbox" role="dialog" aria-label="Visualização ampliada de fotos" aria-modal="true">
         <div class="lightbox-content">
-            <img src="" alt="Foto JK Pool House">
-            <button class="lightbox-close" aria-label="Fechar">✕</button>
-            <button class="lightbox-nav lightbox-prev" aria-label="Anterior">←</button>
-            <button class="lightbox-nav lightbox-next" aria-label="Próxima">→</button>
-            <div class="lightbox-counter">1 / 21</div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-    BOOKING MODAL
-    ============================================================ -->
-    <div class="modal-overlay" id="bookingModal" role="dialog" aria-label="Formulário de reserva">
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Fechar">✕</button>
-            <h3 class="modal-title">Solicitar Reserva</h3>
-            <p class="modal-subtitle">Preencha os dados que entraremos em contato.</p>
-
-            <form id="bookingModalForm">
-                <div class="form-group">
-                    <label for="modalName">Nome *</label>
-                    <input type="text" id="modalName" name="name" required placeholder="Seu nome completo">
-                </div>
-                <div class="form-group">
-                    <label for="modalPhone">Telefone *</label>
-                    <input type="tel" id="modalPhone" name="phone" required placeholder="(11) 99999-9999">
-                </div>
-                <div class="form-group">
-                    <label for="modalDate">Data</label>
-                    <input type="text" id="modalDate" name="date" placeholder="DD/MM/AAAA" onfocus="(this.type='date')">
-                </div>
-                <div class="form-group">
-                    <label for="modalModality">Modalidade</label>
-                    <select id="modalModality" name="modality">
-                        <option value="Day Use">Day Use</option>
-                        <option value="Pernoite">Pernoite</option>
-                        <option value="A definir">A definir</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                    Enviar via WhatsApp
-                </button>
-            </form>
+            <img src="" alt="">
+            <button class="lightbox-close" aria-label="Fechar visualização">✕</button>
+            <button class="lightbox-nav lightbox-prev" aria-label="Foto anterior">‹</button>
+            <button class="lightbox-nav lightbox-next" aria-label="Próxima foto">›</button>
+            <div class="lightbox-counter" aria-live="polite"></div>
         </div>
     </div>
 
     <!-- ============================================================
     SCRIPTS
     ============================================================ -->
-    <script src="js/main.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/whatsapp.js"></script>
-    <script src="js/calendar.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+    <script src="js/modal.js" defer></script>
+    <script src="js/whatsapp.js" defer></script>
+    <script src="js/calendar.js" defer></script>
+    
+    <!-- New Features -->
+    <script src="js/cookie-banner.js" defer></script>
+    <script src="js/social-share.js" defer></script>
+    <script src="js/analytics.js" defer></script>
+    <script src="js/notifications.js" defer></script>
+    <script src="js/performance.js" defer></script>
+    <script src="js/blog.js" defer></script>
+    
+    <!-- PWA Service Worker Registration -->
     <script>
-    // Video play/pause toggle
-    function toggleVideo(card) {
-        const video = card.querySelector('video');
-        if (!video) return;
-        if (video.paused) {
-            // Pause all other videos first
-            document.querySelectorAll('.video-card video').forEach(v => { if (v !== video) v.pause(); });
-            document.querySelectorAll('.video-card').forEach(c => c.classList.remove('playing'));
-            video.play();
-            card.classList.add('playing');
-        } else {
-            video.pause();
-            card.classList.remove('playing');
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+navigator.serviceWorker.register('service-worker.js')
+                    .catch(function(error) {
+                        // Silencioso - apenas registra falha em desenvolvimento
+                    });
+            });
         }
-    }
     </script>
 </body>
 </html>
