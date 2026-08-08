@@ -1300,3 +1300,31 @@ input, textarea, select { font-family: inherit; border: none; outline: none; }
   0%, 100% { filter: drop-shadow(0 0 20px rgba(212,175,55,0.4)); }
   50% { filter: drop-shadow(0 0 40px rgba(212,175,55,0.7)); }
 }
+
+
+/* Nova classe para ícones de imagem na seção Highlights */
+.highlight-real-icon {
+  width: 64px; /* Define a largura do contêiner da imagem */
+  height: 64px; /* Define a altura do contêiner da imagem */
+  margin: 0 auto 1rem; /* Centraliza e adiciona margem inferior */
+  background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05)); /* Fundo gradiente */
+  border-radius: 8px; /* Bordas arredondadas */
+  display: flex; /* Para centralizar a imagem */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  overflow: hidden; /* Garante que a imagem não vaze do contêiner */
+  transition: 0.4s ease; /* Transição suave para efeitos de hover */
+}
+
+.highlight-real-icon img {
+  width: 100%; /* Faz a imagem preencher a largura do contêiner */
+  height: 100%; /* Faz a imagem preencher a altura do contêiner */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer, cortando se necessário */
+  border-radius: 8px; /* Para que a imagem também tenha bordas arredondadas */
+}
+
+/* Efeito de hover para o novo contêiner de ícone */
+.highlight-card:hover .highlight-real-icon {
+  background: linear-gradient(135deg, rgba(212,175,55,0.3), rgba(212,175,55,0.1));
+  transform: scale(1.1);
+}
