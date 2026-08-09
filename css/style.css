@@ -19,6 +19,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   -webkit-font-smoothing: antialiased;
+  overscroll-behavior-x: none;
+  overflow-x: hidden;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -28,6 +30,7 @@ body {
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 img {
@@ -431,6 +434,32 @@ body.cursor-enabled .custom-cursor-follower {
   gap: 1.5rem 1.25rem;
   opacity: 0;
   animation: heroTextReveal 1s ease 1.5s forwards;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 2.5s forwards;
+}
+.scroll-indicator-text {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #C8C8C8;
+}
+.scroll-indicator-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, #D4AF37, transparent);
+  animation: scrollIndicator 2s ease-in-out infinite;
 }
 
 /* ============================================================
@@ -1375,3 +1404,30 @@ body.cursor-enabled .custom-cursor-follower {
   50% { filter: drop-shadow(0 0 40px rgba(212,175,55,0.7)); }
 }
 
+
+/* Nova classe para ícones de imagem na seção Highlights */
+.highlight-real-icon {
+  width: 64px; /* Define a largura do contêiner da imagem */
+  height: 64px; /* Define a altura do contêiner da imagem */
+  margin: 0 auto 1rem; /* Centraliza e adiciona margem inferior */
+  background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05)); /* Fundo gradiente */
+  border-radius: 8px; /* Bordas arredondadas */
+  display: flex; /* Para centralizar a imagem */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  overflow: hidden; /* Garante que a imagem não vaze do contêiner */
+  transition: 0.4s ease; /* Transição suave para efeitos de hover */
+}
+
+.highlight-real-icon img {
+  width: 100%; /* Faz a imagem preencher a largura do contêiner */
+  height: 100%; /* Faz a imagem preencher a altura do contêiner */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer, cortando se necessário */
+  border-radius: 8px; /* Para que a imagem também tenha bordas arredondadas */
+}
+
+/* Efeito de hover para o novo contêiner de ícone */
+.highlight-card:hover .highlight-real-icon {
+  background: linear-gradient(135deg, rgba(212,175,55,0.3), rgba(212,175,55,0.1));
+  transform: scale(1.1);
+}

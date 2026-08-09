@@ -23,7 +23,7 @@ function buildWhatsAppUrl(message) {
 // ============================================================
 function sendWhatsApp(message) {
     const url = buildWhatsAppUrl(message);
-    window.open(url, '_blank');
+    window.open(url, '_blank', "noopener,noreferrer");
 }
 
 // ============================================================
