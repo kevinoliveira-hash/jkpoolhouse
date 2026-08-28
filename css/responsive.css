@@ -1,0 +1,266 @@
+/* ============================================================
+   RESPONSIVE.CSS - Optimized Breakpoints v2
+   JK Pool House - Premium Vacation Rental
+   ============================================================ */
+
+/* === 4K Ultra-Wide (2560px+) === */
+@media screen and (min-width: 2560px) {
+  .container { max-width: 1800px; }
+  .hero-title { font-size: 5.5rem; }
+  .hero-brand-name { font-size: 7rem; letter-spacing: 12px; }
+  .hero-logo { width: 280px; height: 280px; }
+  .section-title { font-size: 3.5rem; }
+  .counter-number { font-size: 5rem; }
+}
+
+/* === Large Desktop (1440px - 2559px) === */
+@media screen and (max-width: 1440px) {
+  .container { max-width: 1200px; }
+  .hero-title { font-size: 3.5rem; }
+  .hero-brand-name { font-size: 4.5rem; letter-spacing: 6px; }
+  .hero-logo { width: 180px; height: 180px; }
+  .gallery-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+}
+
+/* === Desktop (1200px - 1439px) === */
+@media screen and (max-width: 1200px) {
+  .container { max-width: 960px; }
+  .hero-title { font-size: 3rem; }
+  .hero-brand-name { font-size: 4rem; letter-spacing: 5px; }
+  .hero-logo { width: 160px; height: 160px; }
+  .hero-subtitle { font-size: 1.125rem; }
+  .nav-logo-text { font-size: 1.1rem; }
+  .nav-logo img { height: 44px; }
+
+  .about-content { grid-template-columns: 1fr; gap: 2rem; }
+  .tour-grid { grid-template-columns: repeat(2, 1fr); }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .highlights-grid { grid-template-columns: repeat(3, 1fr); }
+  .about-content { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .comparison-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* === Small Desktop (992px - 1120px) === */
+@media screen and (min-width: 992px) and (max-width: 1120px) {
+  .container { max-width: 920px; }
+  .nav-links { gap: 1.5rem; }
+  .nav-links a { font-size: 0.75rem; }
+  .nav-logo-text { font-size: 1.1rem; letter-spacing: 2px; }
+  .hero-brand-name { font-size: 3.4rem; letter-spacing: 4px; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-logo { width: 160px; height: 160px; }
+  .gallery-grid { grid-template-columns: 1.5fr 1fr 1fr; grid-template-rows: 250px 250px; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+  .section-title { font-size: 2.1rem; }
+}
+
+/* === Tablet (768px - 1199px) === */
+@media screen and (max-width: 991px) {
+  .container { max-width: 720px; }
+
+  /* Logo sempre grande */
+  .nav-logo img { height: 44px; }
+  .nav-logo-text { font-size: 1rem; letter-spacing: 2px; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(5,5,5,0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 99;
+  }
+  .nav-links.active { display: flex; }
+  .nav-links a { font-size: 1.5rem; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; z-index: 100; }
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.hero-title { font-size: 2.5rem; }
+  .hero-brand-name { font-size: 3rem; letter-spacing: 4px; }
+  .hero-logo { width: 150px; height: 150px; }
+  .hero-subtitle { font-size: 1rem; max-width: 500px; }
+  .hero-buttons { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; }
+
+  .section-title { font-size: 2rem; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-main { grid-column: span 2; }
+  .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+  .counter-grid { grid-template-columns: repeat(2, 1fr); }
+  .review-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .tour-grid { grid-template-columns: 1fr; }
+  .dayuse-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .video-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .dayuse-grid { grid-template-columns: minmax(0, 1fr); }
+  .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+}
+
+/* === Mobile (576px - 767px) === */
+@media screen and (max-width: 767px) {
+  .container { max-width: 100%; padding: 0 1.25rem; }
+
+  .nav-logo img { height: 40px; }
+  .nav-logo-text { font-size: 0.85rem; letter-spacing: 1px; }
+
+  /* Hero otimizado mobile - sem animações pesadas */
+  .hero { min-height: 85vh; }
+  .hero-background img { animation: none !important; }
+  .hero-title { font-size: 2rem; }
+  .hero-brand-name { font-size: 2.2rem; letter-spacing: 3px; }
+  .hero-logo { width: 130px; height: 130px; margin-bottom: 1rem; }
+  .hero-logo::after { display: none; }
+  .hero-logo img { animation: none !important; filter: drop-shadow(0 0 15px rgba(212,175,55,0.3)); }
+.hero-subtitle { font-size: 0.95rem; }
+  .hero-buttons { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; }
+.hero-buttons .btn { padding: 0.7rem 1.25rem; font-size: 0.75rem; justify-content: center; white-space: nowrap; flex: 1 1 auto; min-width: 0; }
+
+  .section-title { font-size: 1.75rem; }
+  .section-subtitle { font-size: 1rem; }
+  .section { padding: 3rem 0; }
+  .section-header { margin-bottom: 2rem; }
+
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 0.5rem; }
+  .gallery-main { grid-column: span 1; }
+  .highlights-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .highlight-card { padding: 1.5rem; }
+  .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .counter-number { font-size: 2.5rem; }
+  .counter-label { font-size: 0.75rem; }
+  .about-content { gap: 1.5rem; }
+  .about-image img { height: 280px; }
+  .about-features { grid-template-columns: 1fr; }
+
+  .dayuse-card { padding: 1.5rem; }
+  .dayuse-icon { font-size: 2.5rem; }
+  .dayuse-feature { font-size: 0.8rem; padding: 0.4rem 0; }
+  
+  .tour-image { height: 200px; }
+  .tour-info { padding: 1rem; }
+  
+  .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+  .footer-brand { text-align: center; }
+  .footer-brand p { margin: 0 auto; max-width: 100%; }
+  .footer-social { justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+  .lightbox-nav { width: 36px; height: 36px; font-size: 1rem; }
+  .lightbox-prev { left: 5px; }
+  .lightbox-next { right: 5px; }
+  .lightbox-close { top: 10px; right: 10px; font-size: 1.25rem; }
+
+  .modal-content { width: 95%; padding: 1.5rem; border-radius: 16px; }
+  .modal-title { font-size: 1.25rem; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .faq-question { font-size: 0.8rem; padding: 0.75rem 1rem; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); gap: 0.25rem; }
+  .comparison-card { padding: 1rem; }
+  .comparison-item { font-size: 0.8rem; padding: 0.5rem 0; }
+  .video-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  .whatsapp-float { width: 48px; height: 48px; bottom: 1rem; right: 1rem; }
+  .whatsapp-float svg { width: 22px; height: 22px; }
+  .whatsapp-float-tooltip { display: none; }
+  .back-to-top { bottom: 1rem; left: 1rem; width: 36px; height: 36px; font-size: 1rem; }
+  .map-container { height: 220px; margin-top: 1.5rem; }
+  
+  .contact-form { padding: 1.25rem; }
+  .form-group input, .form-group select, .form-group textarea { font-size: 16px; padding: 0.65rem 0.85rem; }
+  
+  /* Desativar particles no mobile */
+  .particles-container { display: none !important; }
+  
+  /* Otimizar transições mobile */
+  .highlight-card:hover, .tour-card:hover, .dayuse-card:hover { transform: none; }
+  .gallery-item:hover img, .tour-card:hover .tour-image img, .video-card:hover img { transform: none; }
+}
+
+/* === Small Mobile (320px - 575px) === */
+@media screen and (max-width: 575px) {
+  .container { padding: 0 1rem; }
+  .hero-title { font-size: 1.6rem; }
+  .hero-brand-name { font-size: 1.8rem; letter-spacing: 2px; }
+  .hero-logo { width: 100px; height: 100px; }
+  .hero-subtitle { font-size: 0.85rem; }
+
+  .nav-logo img { height: 34px; }
+  .nav-logo-text { font-size: 0.75rem; letter-spacing: 1px; }
+
+  .counter-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .counter-number { font-size: 2rem; }
+  .counter-item { padding: 1rem; }
+  .instagram-grid { grid-template-columns: 1fr; }
+  .btn { padding: 0.7rem 1.5rem; font-size: 0.75rem; }
+  .section { padding: 3rem 0; }
+  .section-title { font-size: 1.5rem; }
+}
+
+/* === Landscape Mobile & Tablets === */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero { min-height: 120vh; }
+  .hero-logo { width: 80px; height: 80px; }
+  .hero-brand-name { font-size: 1.5rem; letter-spacing: 2px; }
+  .hero-title { font-size: 1.8rem; }
+  .hero-subtitle { font-size: 0.9rem; max-width: 400px; }
+  .nav-links.active { gap: 0.75rem; }
+  .nav-links a { font-size: 1.1rem; }
+}
+
+/* === Print === */
+@media print {
+  .navbar { position: relative; background: #050505; }
+  .hero { min-height: auto; padding: 4rem 0; }
+  .hero-overlay { background: #050505; }
+  .hero-background,
+  .custom-cursor,
+  .particles-container,
+  .whatsapp-float,
+  .back-to-top { display: none !important; }
+  .section { padding: 2rem 0; }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* === Notebooks (altura reduzida) === */
+@media screen and (max-height: 800px) and (min-width: 992px) {
+  .hero-logo {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 0.75rem;
+  }
+  .hero-brand-name {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .hero-subtitle {
+    margin-bottom: 1.25rem;
+  }
+  .scroll-indicator {
+    bottom: 1rem;
+    gap: 0.85rem;
+  }
+}
