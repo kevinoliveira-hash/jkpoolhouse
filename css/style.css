@@ -1186,7 +1186,7 @@ body.cursor-enabled .custom-cursor-follower {
   height: 70px;
   width: auto;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 15px rgba(212,175,55,0.3));
+  filter: brightness(0) invert(1) drop-shadow(0 0 15px rgba(212,175,55,0.3));
 }
 .footer-brand h4 {
   font-family: 'Cinzel', serif;
