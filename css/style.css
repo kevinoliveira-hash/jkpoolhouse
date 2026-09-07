@@ -1104,6 +1104,66 @@ body.cursor-enabled .custom-cursor-follower {
 }
 .map-container iframe { width: 100%; height: 100%; border: none; }
 
+.map-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+}
+
+.map-btn:hover {
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.map-btn-icon {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.map-btn-google {
+  border-color: rgba(66, 133, 244, 0.4);
+  background: rgba(66, 133, 244, 0.1);
+}
+
+.map-btn-google:hover {
+  background: rgba(66, 133, 244, 0.2);
+  box-shadow: 0 4px 20px rgba(66, 133, 244, 0.25);
+}
+
+.map-btn-waze {
+  border-color: rgba(33, 195, 84, 0.4);
+  background: rgba(33, 195, 84, 0.1);
+}
+
+.map-btn-waze:hover {
+  background: rgba(33, 195, 84, 0.2);
+  box-shadow: 0 4px 20px rgba(33, 195, 84, 0.25);
+}
+
+@media (max-width: 480px) {
+  .map-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* ============================================================
    FOOTER - WITH BRAND EMPHASIS
    ============================================================ */
