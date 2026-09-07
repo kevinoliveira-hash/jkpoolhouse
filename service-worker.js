@@ -16,7 +16,7 @@ const STATIC_ASSETS = [
     '/js/cookie-banner.js',
     '/manifest.json',
     '/imagens/logo.jpg',
-    '/imagens/piscina com hidro.jpg'
+    '/imagens/piscina_com_hidro.jpg'
 ];
 
 // Install - cache static assets

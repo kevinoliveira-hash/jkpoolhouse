@@ -34,6 +34,20 @@ function fmt(label, value) {
 }
 
 // ============================================================
+// SANITIZE INPUT (XSS protection)
+// ============================================================
+function sanitize(str) {
+    if (typeof str !== 'string') return '';
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;')
+        .trim();
+}
+
+// ============================================================
 // QUICK RESERVATION (from buttons)
 // ============================================================
 function quickReserve(type) {
@@ -68,13 +82,13 @@ function quickReserve(type) {
 // RESERVATION FORM SUBMISSION
 // ============================================================
 function handleReservationForm(formData) {
-    var name = formData.name;
-    var phone = formData.phone;
-    var email = formData.email;
-    var guests = formData.guests;
-    var date = formData.date;
-    var modality = formData.modality;
-    var observations = formData.observations;
+    var name = sanitize(formData.name);
+    var phone = sanitize(formData.phone);
+    var email = sanitize(formData.email);
+    var guests = sanitize(formData.guests);
+    var date = sanitize(formData.date);
+    var modality = sanitize(formData.modality);
+    var observations = sanitize(formData.observations);
 
     var message = '🆕 *Nova Solicitação de Reserva* 🆕%0A%0A';
     message += fmt('Nome', name);
@@ -117,8 +131,14 @@ function initReservationForm() {
     var form = document.getElementById('reservationForm');
     if (!form) return;
 
+    var errorEl = document.createElement('div');
+    errorEl.className = 'form-error';
+    errorEl.style.cssText = 'color:#ff6b6b;font-size:0.875rem;margin-top:0.5rem;display:none;';
+    form.appendChild(errorEl);
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+        errorEl.style.display = 'none';
 
         var formData = {
             name: (form.querySelector('#formName') || {}).value || '',
@@ -131,7 +151,8 @@ function initReservationForm() {
         };
 
         if (!formData.name || !formData.phone) {
-            alert('Por favor, preencha seu nome e telefone.');
+            errorEl.textContent = 'Por favor, preencha seu nome e telefone.';
+            errorEl.style.display = 'block';
             return;
         }
 
