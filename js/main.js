@@ -412,11 +412,10 @@ function initKeyboardNav() {
 // DYNAMIC YEAR FOR COPYRIGHT
 // ============================================================
 function updateCopyrightYear() {
-    const elements = document.querySelectorAll('.footer-bottom p:first-child');
-    elements.forEach(el => {
-        const year = new Date().getFullYear();
-        el.textContent = el.textContent.replace(/\d{4}/, year);
-    });
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
 }
 
 // ============================================================
